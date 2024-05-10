@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+
+    Scanner sc=new Scanner(System.in);
+    String A=sc.next();
+   String reversed="";
+
+       for (int i=0; i<A.length(); i++)
+        {
+            String ch= A.substring(i,i+1); 
+            reversed= ch+reversed;
+         }
+       System.out.println(A.equals(reversed)?"Yes":"No");
+    }
+}
