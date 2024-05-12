@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int t=Integer.parseInt(scan.nextLine());
+        List<String> nos=new ArrayList<>();
+        while(scan.hasNextLine()){
+            nos.add(scan.nextLine());
+        }
+        for(String no:nos){
+            List<String> ans=new ArrayList<>();
+            try{
+                Byte.parseByte(no);
+                ans.add("* byte");
+            } catch(Exception e){}
+            try{
+                Short.parseShort(no);
+                ans.add("* short");
+            } catch(Exception e){}
+            try{
+                Integer.parseInt(no);
+                ans.add("* int");
+            } catch(Exception e){}
+            try{
+                Long.parseLong(no);
+                ans.add("* long");
+            } catch(Exception e){}
+            
+            if(ans.isEmpty()){
+                System.out.println(no+" can't be fitted anywhere.");
+            }
+            else{
+                System.out.println(no+" can be fitted in:");
+                for(String an:ans){
+                    System.out.println(an);
+                }
+            }
+        }
+        
+    }
+}
