@@ -1,0 +1,34 @@
+static boolean isAnagram(String a, String b) {
+        if (a.length() != b.length()) {
+            return false;
+        }
+        
+        String aLow = a.toLowerCase();
+        String bLow = b.toLowerCase();
+        java.util.HashMap<Character, Integer> temp = new java.util.HashMap<Character, Integer>();
+        
+        for(int i = 0; i < a.length(); i++){
+            char cA = aLow.charAt(i);
+            char cB = bLow.charAt(i);
+            
+            if (temp.get(cA) == null) {
+                temp.put(cA, 1);
+            }else{
+                temp.put(cA, temp.get(cA)+1);
+            }
+            
+            if (temp.get(cB) == null) {
+                temp.put(cB, 1);
+            } else{
+                temp.put(cB, temp.get(cB)+1);
+            }
+        }
+        
+        for(int i : temp.values()){
+            if (i %2 != 0) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
