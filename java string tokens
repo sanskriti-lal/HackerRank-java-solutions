@@ -1,0 +1,16 @@
+// Write your code here.
+    scan.close();
+
+    String s1 = s.trim();
+
+    if(s1.length() == 0) {
+        System.out.println(s1.length());
+        return;
+    }
+
+    String[] s2 = s1.split("[\\s+!,?._'@]+");
+    System.out.println(s2.length);
+
+    for(String s3 : s2) {
+        System.out.println(s3);
+    }
